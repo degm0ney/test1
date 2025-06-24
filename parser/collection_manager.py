@@ -49,6 +49,9 @@ class CollectionManager:
             # Загрузка кэша
             await self.cache_manager.load_cache()
             
+            # Запуск автоматического сохранения
+            await self.data_manager.start_auto_save()
+            
             # Проверка работоспособности загрузчика
             async with self.downloader:
                 health_check = await self.downloader.health_check()
