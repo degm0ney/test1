@@ -345,8 +345,16 @@ class CollectionManager:
     
     async def cleanup(self):
         """Очистка ресурсов"""
+        # Останавливаем автосохранение
+        await self.data_manager.stop_auto_save()
+        
+        # Финальное сохранение всех коллекций
+        save_results = await self.data_manager.save_all_collections()
+        saved_count = sum(1 for success in save_results.values() if success)
+        logger.log_info(f"💾 Финальное сохранение: {saved_count} коллекций")
+        
         if hasattr(self.downloader, 'close_session'):
             await self.downloader.close_session()
         
         await self.cache_manager.save_cache(force=True)
-        logger.log_info("Collection manager cleanup completed")
+        logger.log_info("🧹 Очистка менеджера коллекций завершена")
