@@ -1,0 +1,11 @@
+{
+  "lightsword_demo": {
+    "total_urls": 20,
+    "processed_urls": 20,
+    "success_count": 20,
+    "error_count": 0,
+    "completion_rate": 100.0,
+    "success_rate": 100.0,
+    "last_updated": "2025-06-24T07:17:00.549922Z"
+  }
+}
