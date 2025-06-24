@@ -170,16 +170,15 @@ class TelegramGiftsParserTest(unittest.TestCase):
                 collection_data = json.load(f)
             
             # Validate collection data structure
-            self.assertIn("collection_info", collection_data, "Collection info missing")
+            self.assertIn("collection_name", collection_data, "Collection name missing")
             self.assertIn("gifts", collection_data, "Gifts data missing")
             self.assertTrue(len(collection_data["gifts"]) > 0, "No gifts in collection data")
             
             # Check collection info
-            collection_info = collection_data["collection_info"]
-            self.assertEqual(collection_info["collection_name"], test_collection, "Wrong collection name")
-            self.assertTrue(collection_info["total_gifts"] > 0, "No gifts in collection info")
+            self.assertEqual(collection_data["collection_name"], test_collection, "Wrong collection name")
+            self.assertTrue(collection_data["total_gifts"] > 0, "No gifts in collection info")
             
-            print(f"📊 Collection stats: {len(collection_data['gifts'])}/{collection_info['total_gifts']} gifts parsed")
+            print(f"📊 Collection stats: {len(collection_data['gifts'])}/{collection_data['total_gifts']} gifts parsed")
             
         except json.JSONDecodeError:
             self.fail(f"Collection file for {test_collection} contains invalid JSON")
