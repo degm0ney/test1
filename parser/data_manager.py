@@ -145,7 +145,10 @@ class DataManager:
                 # Атомарное переименование
                 temp_file.rename(collection_file)
                 
-                logger.log_info(f"Saved collection {collection_name}: {len(collection_data['gifts'])} gifts")
+                current_time = time.time()
+                self.last_save_time = current_time
+                
+                logger.log_info(f"💾 Сохранена коллекция {collection_name}: {len(collection_data['gifts'])} подарков")
                 return True
                 
             except Exception as e:
