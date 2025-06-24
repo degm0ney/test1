@@ -21,6 +21,49 @@ class DataManager:
         self.collections_cache: Dict[str, Dict] = {}
         self.pending_writes: Dict[str, List[Dict]] = {}
         self.write_lock = asyncio.Lock()
+        self.last_save_time = time.time()
+        self.auto_save_interval = 60  # секунды
+        self.auto_save_task = None
+        self.is_running = True
+        
+    async def start_auto_save(self):
+        """Запускает автоматическое сохранение каждую минуту"""
+        self.auto_save_task = asyncio.create_task(self._auto_save_loop())
+        logger.log_info("🔄 Автоматическое сохранение запущено (каждые 60 секунд)")
+        
+    async def stop_auto_save(self):
+        """Останавливает автоматическое сохранение"""
+        self.is_running = False
+        if self.auto_save_task:
+            self.auto_save_task.cancel()
+            try:
+                await self.auto_save_task
+            except asyncio.CancelledError:
+                pass
+        logger.log_info("🛑 Автоматическое сохранение остановлено")
+        
+    async def _auto_save_loop(self):
+        """Цикл автоматического сохранения"""
+        while self.is_running:
+            try:
+                await asyncio.sleep(self.auto_save_interval)
+                if not self.is_running:
+                    break
+                    
+                # Сохраняем все коллекции из кэша
+                saved_count = 0
+                for collection_name in list(self.collections_cache.keys()):
+                    if await self.save_collection(collection_name, force_write=True):
+                        saved_count += 1
+                
+                if saved_count > 0:
+                    logger.log_info(f"💾 Автосохранение: обновлено {saved_count} коллекций")
+                    
+            except asyncio.CancelledError:
+                break
+            except Exception as e:
+                logger.log_error(f"Ошибка автосохранения: {e}")
+                await asyncio.sleep(5)  # Короткая пауза при ошибке
         
     async def load_collection(self, collection_name: str) -> Dict[str, Any]:
         """
