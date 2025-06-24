@@ -206,7 +206,12 @@ class DataManager:
         self.collections_cache[collection_name] = collection_data
         
         if added_count > 0 or updated_count > 0:
-            logger.log_info(f"Collection {collection_name}: added {added_count}, updated {updated_count} gifts")
+            logger.log_info(f"📊 Коллекция {collection_name}: добавлено {added_count}, обновлено {updated_count} подарков")
+            
+        # Принудительно сохраняем если прошло более 30 секунд с последнего сохранения
+        current_time = time.time()
+        if current_time - self.last_save_time > 30:
+            await self.save_collection(collection_name, force_write=True)
         
         return added_count + updated_count
     
