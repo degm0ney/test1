@@ -1,0 +1,27 @@
+{
+  "collection_name": "durovscap",
+  "total_gifts": 1,
+  "processed_gifts": 1,
+  "last_updated": "2025-06-24T10:34:35.919969Z",
+  "created_at": "2025-06-24T10:34:35.918579Z",
+  "gifts": [
+    {
+      "url": "https:\/\/t.me\/nft\/durovscap-1",
+      "gift_id": "durovscap-1",
+      "collection": "durovscap",
+      "gift_number": 1,
+      "title": "Durov’s Cap #1",
+      "model": "Shadow",
+      "backdrop": "Shamrock Green",
+      "symbol": "Ram of Amun",
+      "rarity": "",
+      "owner": "Roxman",
+      "quantity": "4 687\/4 774",
+      "total_supply": "4 774",
+      "other_data": "Owner: Roxman; Quantity: 4 687\/4 774 issued",
+      "image_url": "https:\/\/cdn4.cdn-telegram.org\/file\/RO3ILIASDW_TvX5EeenD-6OdWsZd1D1LM70e2eXe4CSlI4HuwxqmQmv6NIgE1g2PISh5mv6OMzmccb-eCsU8WaVUGuHSU4tyDgY9Hodd1ftNTg4NJgI57UtjO_zsfs3FZVryfyG9PYN5banZmoHjWmjK3dV3V1zsdKfDWk9kkvVj7TAlSiUnijqcNIj9NuUukxlPgqVsPN8knQLu6QS0TAW2OOsirtPqDnJatDHr7dYgp6nydAFsxoInqFZiZklLYVUQqIHps2wuGBc1O4uZGZSN8BIWwV_9FMIekNhd1NVYWsdw9dThCDH7pCtIS8LUBhdVsQVixVt40EMx5khxjQ.jpg",
+      "status": "deleted",
+      "parsed_at": "2025-06-24T10:34:35.918430Z"
+    }
+  ]
+}
