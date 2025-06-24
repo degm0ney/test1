@@ -118,5 +118,53 @@
       "save_interval": 1000,
       "log_level": "INFO"
     }
+  },
+  {
+    "session_id": "single_durovscap",
+    "start_time": "2025-06-24T10:41:10.828826Z",
+    "end_time": "2025-06-24T10:41:11.242373Z",
+    "duration": 0,
+    "total_collections": 1,
+    "completed_collections": 0,
+    "total_urls": 4774,
+    "processed_urls": 0,
+    "successful_parses": 0,
+    "failed_parses": 4774,
+    "success_rate": 0.0,
+    "urls_per_second": 0.0,
+    "config_snapshot": {
+      "max_concurrent_requests": 100,
+      "batch_size": 500,
+      "request_delay": 0.1,
+      "timeout": 15,
+      "retry_count": 3,
+      "requests_per_second": 20,
+      "save_interval": 1000,
+      "log_level": "INFO"
+    }
+  },
+  {
+    "session_id": "single_nonexistent_collection",
+    "start_time": "2025-06-24T10:41:13.260520Z",
+    "end_time": "2025-06-24T10:41:13.264942Z",
+    "duration": 0,
+    "total_collections": 1,
+    "completed_collections": 0,
+    "total_urls": 0,
+    "processed_urls": 0,
+    "successful_parses": 0,
+    "failed_parses": 0,
+    "success_rate": 0.0,
+    "urls_per_second": 0.0,
+    "config_snapshot": {
+      "max_concurrent_requests": 100,
+      "batch_size": 500,
+      "request_delay": 0.1,
+      "timeout": 15,
+      "retry_count": 3,
+      "requests_per_second": 20,
+      "save_interval": 1000,
+      "log_level": "INFO"
+    }
   }
 ]
