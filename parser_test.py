@@ -198,7 +198,7 @@ class TelegramGiftsParserTest(unittest.TestCase):
         )
         
         # Check if error message is present (even if return code is 0)
-        error_found = "Failed to process collection" in (stdout + stderr)
+        error_found = "Error: Collection file not found" in (stdout + stderr)
         self.assertTrue(error_found, "Error message missing for invalid collection")
         
         print("✅ Error handling test passed")
