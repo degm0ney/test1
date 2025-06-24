@@ -7,5 +7,14 @@
     "completion_rate": 100.0,
     "success_rate": 100.0,
     "last_updated": "2025-06-24T10:37:49.621076Z"
+  },
+  "durovscap": {
+    "total_urls": 4774,
+    "processed_urls": 1774,
+    "success_count": 1774,
+    "error_count": 0,
+    "completion_rate": 37.15961457896942,
+    "success_rate": 100.0,
+    "last_updated": "2025-06-24T10:39:40.330390Z"
   }
 }

@@ -46,5 +46,29 @@
       "save_interval": 1000,
       "log_level": "INFO"
     }
+  },
+  {
+    "session_id": "single_durovscap",
+    "start_time": "2025-06-24T10:37:51.265032Z",
+    "end_time": "2025-06-24T10:39:40.333531Z",
+    "duration": 109.0643048286438,
+    "total_collections": 1,
+    "completed_collections": 1,
+    "total_urls": 4774,
+    "processed_urls": 1774,
+    "successful_parses": 1774,
+    "failed_parses": 0,
+    "success_rate": 100.0,
+    "urls_per_second": 16.265633405789522,
+    "config_snapshot": {
+      "max_concurrent_requests": 100,
+      "batch_size": 500,
+      "request_delay": 0.1,
+      "timeout": 15,
+      "retry_count": 3,
+      "requests_per_second": 20,
+      "save_interval": 1000,
+      "log_level": "INFO"
+    }
   }
 ]
